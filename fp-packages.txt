@@ -1,0 +1,7 @@
+com.github.tchx84.Flatseal
+com.mattjakeman.ExtensionManager
+com.rafaelmardojai.Blanket
+com.slack.Slack
+org.gnome.gitlab.cheywood.Buffer
+org.gtk.Gtk3theme.Adwaita-dark
+org.signal.Signal
