@@ -24,9 +24,17 @@ icon-theme='Adwaita'
 show-battery-percentage=true
 toolkit-accessibility=false
 
+[org/gnome/desktop/media-handling]
+automount=false
+automount-open=false
+autorun-never=true
+
 [org/gnome/desktop/privacy]
 remove-old-temp-files=true
 report-technical-problems=true
+
+[org/gnome/desktop/session]
+idle-delay=uint32 300
 
 [org/gnome/desktop/sound]
 event-sounds=true
@@ -49,6 +57,7 @@ migrated-gtk-settings=true
 show-delete-permanently=true
 
 [org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
 
 [org/gnome/shell]
