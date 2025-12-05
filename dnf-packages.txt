@@ -21,9 +21,10 @@ lm_sensors
 NetworkManager-*-gnome
 podman-compose
 podman-docker
+remmina
+sbsigntools
 setools-console
 tmux
 virt-manager
-yq
 wireguard-tools
-sbsigntools
+yq
