@@ -28,3 +28,4 @@ tmux
 virt-manager
 wireguard-tools
 yq
+shellcheck
