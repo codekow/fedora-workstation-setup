@@ -9,6 +9,7 @@ dconf-editor
 fastfetch
 firewall-config
 firewalld
+genisoimage
 gnome-tweaks
 gparted
 hfsplus-tools
@@ -19,13 +20,18 @@ keepassxc
 libvirt
 lm_sensors
 NetworkManager-*-gnome
+nmap
 podman-compose
 podman-docker
+pykickstart
+qrencode
 remmina
 sbsigntools
 setools-console
+ShellCheck
+strace
 tmux
+vim
 virt-manager
 wireguard-tools
 yq
-shellcheck
