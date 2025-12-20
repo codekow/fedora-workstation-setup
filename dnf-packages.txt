@@ -21,6 +21,7 @@ libvirt
 lm_sensors
 NetworkManager-*-gnome
 nmap
+obs-studio
 podman-compose
 podman-docker
 pykickstart
@@ -31,7 +32,10 @@ setools-console
 ShellCheck
 strace
 tmux
+v4l2loopback
 vim
 virt-manager
 wireguard-tools
 yq
+
+group development-tools

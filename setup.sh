@@ -47,7 +47,8 @@ setup_flatpak_software(){
 
 setup_dnf_software(){
   [ -e dnf-packages.txt ] || return 1
-  sudo dnf -y install $(cat dnf-packages.txt)
+  sudo dnf -y install $(grep -v ^group dnf-packages.txt)
+  sudo dnf -y group install $(sed -n '/^group/ s/^group//p' dnf-packages.txt)
 }
 
 setup_display_link(){
@@ -93,6 +94,10 @@ EOF
 
 }
 
+setup_obs(){
+  mkdir -p ~/.config/obs-studio/plugins
+}
+
 tweaks(){
   # fix hidraw access
   echo 'KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/99-hidraw-permissions.rules
@@ -112,16 +117,16 @@ download_printer_driver(){
 main(){
   echo "Starting OS configuration..."
 
-  setup_dconf
-  setup_display_link
+  # setup_dconf
+  # setup_display_link
   setup_dnf_software
-  setup_flatpak_software
-  setup_luks
-  setup_no_password_sudo
-  setup_user
-  setup_vscode
-  tweaks
-  update_fedora
+  # setup_flatpak_software
+  # setup_luks
+  # setup_no_password_sudo
+  # setup_user
+  # setup_vscode
+  # tweaks
+  # update_fedora
 
   printf " Complete"
 }
