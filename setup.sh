@@ -62,6 +62,7 @@ setup_user(){
 setup_luks(){
   sudo clevis luks bind -d /dev/nvme0n1p3 -s1 tpm2 '{"pcr_ids":"0"}'
   sudo systemd-analyze pcrs | sudo tee /root/pcrs
+  sudo dracut --regenerate-all --force
 }
 
 setup_dconf(){
@@ -72,12 +73,13 @@ setup_dconf(){
   TERM_UUID=$(dconf read /org/gnome/Ptyxis/default-profile-uuid | sed "s@'@@g")
   echo dconf write "/org/gnome/Ptyxis/Profiles/${TERM_UUID}/opacity" 0.93
 
+
 cat << EOF | sudo tee /etc/dconf/db/local.d/10-power
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-timeout=0
 sleep-inactive-ac-type='nothing'
-sleep-inactive-battery-timeout=0
-sleep-inactive-battery-type='nothing'
+sleep-inactive-battery-timeout=900
+sleep-inactive-battery-type='suspend'
 EOF
 
 cat << EOF | sudo tee /etc/dconf/db/local.d/20-session
@@ -117,16 +119,20 @@ download_printer_driver(){
 main(){
   echo "Starting OS configuration..."
 
-  # setup_dconf
-  # setup_display_link
   setup_dnf_software
-  # setup_flatpak_software
-  # setup_luks
-  # setup_no_password_sudo
-  # setup_user
-  # setup_vscode
-  # tweaks
-  # update_fedora
+  setup_flatpak_software
+  setup_vscode
+  update_fedora 
+
+  setup_dconf
+  setup_display_link
+  setup_luks
+  setup_no_password_sudo
+  setup_user
+  tweaks
+
+  download_printer_driver
+  # setup_obs
 
   printf " Complete"
 }
