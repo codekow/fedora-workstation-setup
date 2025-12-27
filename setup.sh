@@ -107,8 +107,8 @@ setup_gnome_extensions(){
   gnome-extensions-cli enable $(cat g-extensions.txt)
   gnome-extensions-cli update
 
-  # deactivate
-  # rm -rf venv
+  deactivate
+  rm -rf venv
 }
 
 setup_obs(){
@@ -153,4 +153,4 @@ main(){
   printf " Complete"
 }
 
-# main
+main
