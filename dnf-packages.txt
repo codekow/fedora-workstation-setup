@@ -32,7 +32,6 @@ setools-console
 ShellCheck
 strace
 tmux
-v4l2loopback
 vim
 virt-manager
 wireguard-tools
