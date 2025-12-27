@@ -25,6 +25,7 @@ obs-studio
 podman-compose
 podman-docker
 pykickstart
+python3-pip
 qrencode
 remmina
 sbsigntools

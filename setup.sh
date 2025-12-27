@@ -96,6 +96,20 @@ EOF
 
 }
 
+setup_gnome_extensions(){
+  python -m venv venv
+  . venv/bin/activate
+
+  pip install -U pip
+  pip install gnome-extensions-cli
+
+  gnome-extensions-cli install $(cat g-extensions.txt)
+  gnome-extensions-cli update
+
+  deactivate
+  rm -rf venv
+}
+
 setup_obs(){
   mkdir -p ~/.config/obs-studio/plugins
 }
@@ -126,6 +140,7 @@ main(){
 
   setup_dconf
   setup_display_link
+  setup_gnome_extensions
   setup_luks
   setup_no_password_sudo
   setup_user
