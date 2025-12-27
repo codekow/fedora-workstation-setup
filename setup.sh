@@ -104,10 +104,11 @@ setup_gnome_extensions(){
   pip install gnome-extensions-cli
 
   gnome-extensions-cli install $(cat g-extensions.txt)
+  gnome-extensions-cli enable $(cat g-extensions.txt)
   gnome-extensions-cli update
 
-  deactivate
-  rm -rf venv
+  # deactivate
+  # rm -rf venv
 }
 
 setup_obs(){
@@ -152,4 +153,4 @@ main(){
   printf " Complete"
 }
 
-main
+# main
