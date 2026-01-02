@@ -56,7 +56,7 @@ setup_display_link(){
 }
 
 setup_user(){
-  sudo usermod -a -G libvirt,disk,cdrom,floppy,kvm,users "${USER}"
+  sudo usermod -a -G libvirt,disk,cdrom,floppy,kvm,users,dialout "${USER}"
 }
 
 setup_luks(){
