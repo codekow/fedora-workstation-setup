@@ -9,3 +9,4 @@ A quick dump of a preferred customization of fedora
 ## Links
 
 - https://github.com/Comprehensive-Wall28/Nvidia-Fedora-Guide
+- https://discussion.fedoraproject.org/t/fedora-41-ssh-to-rhel6-error-in-libcrypto/135999/11

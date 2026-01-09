@@ -126,6 +126,19 @@ tweaks(){
   sudo authselect apply-changes
 
 }
+tweak_old_ssh(){
+# https://discussion.fedoraproject.org/t/fedora-41-ssh-to-rhel6-error-in-libcrypto/135999/12
+
+sudo update-crypto-policies --set DEFAULT:SHA1
+
+cat << EOF | sudo tee /etc/crypto-policies/policies/modules/SHA1-SSL-SIG.pmod
+# https://discussion.fedoraproject.org/t/fedora-41-ssh-to-rhel6-error-in-libcrypto/135999/12
+# Unblock openssl sha1 signatures for ssh to <RH6
+__openssl_block_sha1_signatures = 0
+EOF
+
+sudo update-crypto-policies --set DEFAULT:SHA1-SSL-SIG
+}
 
 download_printer_driver(){
   echo "https://in.canon/en/support/0100924010"
