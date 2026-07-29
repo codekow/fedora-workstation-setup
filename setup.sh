@@ -108,7 +108,7 @@ setup_dnf_broadcom_fprintd(){
 }
 
 setup_dnf_display_link(){
-  DISPLAY_LINK_RPM=https://github.com/displaylink-rpm/displaylink-rpm/releases/download/v6.2.0-1/fedora-42-displaylink-1.14.16-1.github_evdi.x86_64.rpm
+  DISPLAY_LINK_RPM=https://github.com/displaylink-rpm/displaylink-rpm/releases/download/v6.3.0-1/fedora-44-displaylink-1.15.0-1.github_evdi.x86_64.rpm
   sudo dnf -y install "${DISPLAY_LINK_RPM}"
 }
 

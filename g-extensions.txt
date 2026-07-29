@@ -15,6 +15,7 @@ no-overview@fthx
 quicksettings-audio-devices-hider@marcinjahn.com
 sound-percentage@subashghimire.info.np
 spotify-ad-block@danigm.net
+transparent-window-moving@noobsai.github.com
 upower-battery@codilia.com
 user-theme@gnome-shell-extensions.gcampax.github.com
 weatherornot@somepaulo.github.io
